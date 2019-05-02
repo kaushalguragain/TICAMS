@@ -19,7 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentActivity"></activity>
+        <activity android:name=".ResultDisplay"></activity>
+        <activity android:name=".StudentListActivity" />
+        <activity android:name=".StudentActivity" />
         <activity android:name=".TeacherAttendence" />
         <activity android:name=".StudentAttendence" />
         <activity android:name=".MainActivity">

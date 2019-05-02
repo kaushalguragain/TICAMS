@@ -1,6 +1,7 @@
 package com.example.ticams.services;
 
 
+import com.example.ticams.Dtos.CoursesDto;
 import com.example.ticams.Dtos.LoginDto;
 import com.example.ticams.Dtos.StudentDto;
 import com.example.ticams.Dtos.StudentListDto;
@@ -31,9 +32,14 @@ public interface ApiInterface {
 
 
 
+    @GET(preFix + "courses")
+    Call<List<CoursesDto>> getAllCourse(@Header("customerId") Long customerId,
+                                        @Header("token") String token,
+                                        @Header("userId") Long userId);
 
     @GET(preFix + "students")
-    Call<StudentListDto> listStudents(@Header("customerId") Long customerId,
+    Call<StudentListDto> listStudents(@Query("courseId") int courseid,
+                                      @Header("customerId") Long customerId,
                                       @Header("token") String token,
                                       @Header("loginId") Long loginId,
                                       @Query("sort") String sort,
